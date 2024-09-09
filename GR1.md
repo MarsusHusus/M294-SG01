@@ -4,6 +4,8 @@
 - git config --global user.email "your_email"
 
 ## Clone
--git clone "url"
+- git clone "url"
 
--git stauts
+- git stauts
+
+- git push
