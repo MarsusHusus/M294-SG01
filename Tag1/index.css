@@ -1,0 +1,31 @@
+.meintext {
+    font-family: "Playwrite CU", cursive;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0, /* Standardmäßig nicht gefüllt */
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: red;
+}
+
+.material-symbols-filled {
+    font-variation-settings:
+    'FILL' 1, /* Gefülltes Symbol */
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: red;
+}
+
+.material-symbols-half-filled {
+    font-variation-settings:
+    'FILL' 1, /* Gefülltes Symbol, aber mit niedrigerer Deckkraft */
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: red;
+    opacity: 0.5; /* Halbtransparent für "halb gefüllt" Effekt */
+}

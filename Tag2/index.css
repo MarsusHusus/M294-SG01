@@ -1,0 +1,187 @@
+.meintext {
+    font-family: "Playwrite CU", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style:
+     normal;
+}
+
+.custom-two-tone {
+color: red; /* Primärfarbe */
+--mdc-icon-color: blue; /* Sekundärfarbe */
+}
+
+
+.myColor {
+/* Aufgabe XX: Farbe von Icons verändern - https://codepen.io/sosuke/pen/Pjoqqp */
+filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7448%) hue-rotate(247deg) brightness(92%) contrast(144%);
+}
+.red{
+filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7458%) hue-rotate(-15deg) brightness(96%) contrast(111%);
+
+}
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons Sharp';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialiconssharp/v109/oPWQ_lt5nv4pWNJpghLP75WiFR4kLh3kvmvR.woff2) format('woff2');
+  }
+  
+  .material-icons-sharp {
+    font-family: 'Material Icons Sharp';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* fallback */
+@font-face {
+    font-family: 'Material Icons Round';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialiconsround/v108/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmP.woff2) format('woff2');
+  }
+  
+  .material-icons-round {
+    font-family: 'Material Icons Round';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* fallback */
+@font-face {
+    font-family: 'Material Icons Two Tone';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialiconstwotone/v112/hESh6WRmNCxEqUmNyh3JDeGxjVVyMg4tHGctNCu0.woff2) format('woff2');
+  }
+  body {
+    --google-font-color-materialiconstwotone:none;
+  }
+  
+  .material-icons-two-tone {
+    font-family: 'Material Icons Two Tone';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* fallback */
+@font-face {
+    font-family: 'Material Icons Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v109/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');
+  }
+  
+  .material-icons-outlined {
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 901px) and (max-width: 1000px) {
+    body {
+        background-color: red;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 900px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 800px) {
+    body {
+        background-color: red;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 700px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 600px) {
+    body {
+        background-color: red;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 500px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: white;
+    }
+}

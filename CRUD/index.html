@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrzeugliste</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Google Fonts Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/index.js" defer></script>
+</head>
+<body>
+    <nav class="orange lighten-3">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">LOGO</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="https://materializecss.com" target="_blank" class="moodle-link"><i class="material-icons left">radio_button_checked</i> MATERIALIZE CSS</a></li>
+                <li><a href="https://geeklab.app" target="_blank" class="moodle-link"><i class="material-icons left">radio_button_checked</i> GEEKLAPS</a></li>
+                <li><a href="https://lernen.zbw.ch" target="_blank" class="moodle-link"><i class="material-icons left">radio_button_checked</i> MOODLE</a></li>
+            </ul>
+        </div>
+    </nav>
+ 
+    <div class="container">
+        <table class="striped centered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>kraftstoff</th>
+                    <th>farbe</th>
+                    <th>bauart</th>
+                    <th>tank</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody id="vehicle-table">
+                <tr data-id="1">
+                    <td>1</td>
+                    <td>Passat</td>
+                    <td>Diesel</td>
+                    <td><div class="color-box black"></div> #000000</td>
+                    <td>Limousine</td>
+                    <td class="tank">0</td>
+                    <td>
+                        <i class="material-icons blue-text action-btn car" data-action="car">directions_car</i>
+                        <i class="material-icons green-text action-btn edit" data-action="edit">edit</i>
+                        <i class="material-icons red-text action-btn delete" data-action="delete">delete</i>
+                    </td>
+                </tr>
+                <tr data-id="2">
+                    <td>2</td>
+                    <td>Opel</td>
+                    <td>Benzin</td>
+                    <td><div class="color-box teal"></div> #008888</td>
+                    <td>SUV</td>
+                    <td class="tank">0</td>
+                    <td>
+                        <i class="material-icons blue-text action-btn car" data-action="car">directions_car</i>
+                        <i class="material-icons green-text action-btn edit" data-action="edit">edit</i>
+                        <i class="material-icons red-text action-btn delete" data-action="delete">delete</i>
+                    </td>
+                </tr>
+                <tr data-id="3">
+                    <td>3</td>
+                    <td>VW</td>
+                    <td>Elektro</td>
+                    <td><div class="color-box teal darken-3"></div> #006666</td>
+                    <td>Pickup</td>
+                    <td class="tank">0</td>
+                    <td>
+                        <i class="material-icons blue-text action-btn car" data-action="car">directions_car</i>
+                        <i class="material-icons green-text action-btn edit" data-action="edit">edit</i>
+                        <i class="material-icons red-text action-btn delete" data-action="delete">delete</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+ 
+        <!-- Floating Action Button for adding new vehicle -->
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red add-vehicle">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+<div id="add-vehicle-modal" class="modal">
+    <div class="modal-content">
+      <h4>Neues Fahrzeug hinzufügen</h4>
+      <div class="input-field">
+        <input id="vehicle-name" type="text">
+        <label for="vehicle-name">Fahrzeugname</label>
+      </div>
+      <div class="input-field">
+        <input id="vehicle-fuel" type="text">
+        <label for="vehicle-fuel">Kraftstoff</label>
+      </div>
+      <div class="input-field">
+        <input id="vehicle-color" type="text">
+        <label for="vehicle-color">Farbe (Hexcode)</label>
+      </div>
+      <div class="input-field">
+        <input id="vehicle-type" type="text">
+        <label for="vehicle-type">Bauart</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="save-vehicle">Speichern</a>
+    </div>
+  </div>
+  
+  <!-- Floating Action Button for adding new vehicle -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red add-vehicle">
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
+  
+ 
+ 
+</body>
+</html>

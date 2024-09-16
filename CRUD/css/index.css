@@ -1,0 +1,37 @@
+.color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+ 
+.black {
+    background-color: #000000;
+}
+ 
+.teal {
+    background-color: #008888;
+}
+ 
+.teal.darken-3 {
+    background-color: #006666;
+}
+ 
+.nav-wrapper {
+    padding: 0 20px;
+}
+ 
+.table-container {
+    margin-top: 20px;
+}
+ 
+th, td {
+    padding: 15px 10px;
+}
+ 
+.fixed-action-btn {
+    position: fixed;
+    bottom: 45px;
+    right: 24px;
+}
