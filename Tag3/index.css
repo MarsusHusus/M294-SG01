@@ -1,0 +1,6 @@
+.input-field input[type=text]:focus {
+    border-bottom: 2px solid pink !important;
+    -webkit-box-shadow: 0 2px 0 0 pink !important;
+    -moz-box-shadow: 0 2px 0 0 pink !important;
+    box-shadow: 0 2px 0 0 pink !important;
+}
