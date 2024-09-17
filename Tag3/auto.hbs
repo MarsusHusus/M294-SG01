@@ -1,7 +1,7 @@
 {{#each data}}
-{{id}}::::
-{{name}} - {{bauart}} - {{kraftstoff}}
-<button class="delete" data-id="{{id}}">Delete</button>
-<br>
+  {{id}}:::: 
+  {{name}} - {{bauart}} - {{kraftstoff}} - TanK: {{tanken}}
+  <button class="delete" data-id="{{id}}">Delete</button>
+  <button class="tanken" data-id="{{id}}" data-tanken="{{tanken}}">Tanken</button> <!-- Edit button added -->
+  <br>
 {{/each}}
- 
