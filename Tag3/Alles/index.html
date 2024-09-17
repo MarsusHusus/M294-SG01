@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Registrierung</title>
+
+    <!-- Google Fonts und Material-Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            text-align: center;
+            color: #26a69a;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-field input[type="text"], .input-field select, .input-field input[type="color"], .input-field input[type="date"], .input-field input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-field input[type="text"]:focus, .input-field select:focus, .input-field input[type="date"]:focus, .input-field input[type="time"]:focus {
+            border-color: #26a69a;
+            box-shadow: 0 2px 6px rgba(38, 166, 154, 0.3);
+        }
+
+        .input-field label {
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background-color: #fff;
+            padding: 0 5px;
+            color: #26a69a;
+            font-size: 14px;
+        }
+
+        .input-field .prefix {
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            color: #999;
+        }
+
+        .input-field input[type="color"] {
+            height: 50px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        /* Radio Buttons */
+        .radio-group {
+            margin-bottom: 30px;
+        }
+
+        .radio-group label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Slider */
+        .range-field {
+            margin-bottom: 30px;
+        }
+
+        .range-field input[type=range] {
+            width: 100%;
+        }
+
+        /* Submit Button */
+        .btn {
+            background-color: #26a69a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        .btn:hover {
+            background-color: #2bbbad;
+        }
+
+        .btn i {
+            margin-left: 8px;
+        }
+
+        /* Kalender und Uhr Symbole */
+        .input-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            color: #26a69a;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Auto-Registrierung</h3>
+        <form id="auto-registrierung-form" method="post">
+            
+            <!-- Fahrzeugmarke -->
+            <div class="input-field">
+                <i class="material-icons prefix">directions_car</i>
+                <label for="marke">Fahrzeugmarke</label>
+                <input type="text" name="marke" id="marke" required>
+            </div>
+            
+            <!-- Fahrzeugmodell -->
+            <div class="input-field">
+                <i class="material-icons prefix">build</i>
+                <label for="modell">Fahrzeugmodell</label>
+                <input type="text" name="modell" id="modell" required>
+            </div>
+            
+            <!-- Fahrzeugtyp (Radio Buttons) -->
+            <div class="radio-group">
+                <p>Fahrzeugtyp:</p>
+                <label>
+                    <input name="typ" type="radio" value="Auto" required />
+                    <span>Auto</span>
+                </label>
+                <label>
+                    <input name="typ" type="radio" value="Motorrad" />
+                    <span>Motorrad</span>
+                </label>
+            </div>
+
+            <!-- Baujahr (Select Dropdown) -->
+            <div class="input-field">
+                <label for="baujahr">Baujahr</label>
+                <select name="baujahr" id="baujahr" required>
+                    <option value="" disabled selected>Baujahr auswählen</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+            </div>
+
+            <!-- Farbe auswählen (Farbwähler) -->
+            <div class="input-field">
+                <label for="farbe">Farbe des Fahrzeugs</label>
+                <input type="color" name="farbe" id="farbe" required>
+            </div>
+
+            <!-- Kilometerstand (Slider) -->
+            <div class="range-field">
+                <label for="kilometer">Kilometerstand (in Tausend km)</label>
+                <input type="range" id="kilometer" name="kilometer" min="0" max="500" step="10">
+                <span id="kilometerwert"></span>
+            </div>
+
+            <!-- Datumsauswahl mit Kalender-Icon -->
+            <div class="input-field">
+                <label for="datum">Registrierungsdatum</label>
+                <input type="date" name="datum" id="datum" required>
+            </div>
+
+            <!-- Uhrzeit Auswahl -->
+            <div class="input-field">
+                <label for="zeit">Registrierungszeit</label>
+                <input type="time" name="zeit" id="zeit" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn" type="submit" name="action">Registrieren
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+
+    <!-- JQuery und Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+
+        // Slider-Wert anzeigen
+        document.getElementById('kilometer').addEventListener('input', function() {
+            var kilometerwert = this.value;
+            document.getElementById('kilometerwert').innerHTML = kilometerwert + ' km';
+        });
+
+        document.getElementById('auto-registrierung-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var marke = document.getElementById('marke').value;
+            var modell = document.getElementById('modell').value;
+            var typ = document.querySelector('input[name="typ"]:checked').value;
+            var baujahr = document.getElementById('baujahr').value;
+            var farbe = document.getElementById('farbe').value;
+            var kilometer = document.getElementById('kilometer').value;
+            var datum = document.getElementById('datum').value;
+            var zeit = document.getElementById('zeit').value;
+
+            console.log("Marke: " + marke);
+            console.log("Modell: " + modell);
+            console.log("Typ: " + typ);
+            console.log("Baujahr: " + baujahr);
+            console.log("Farbe: " + farbe);
+            console.log("Kilometer: " + kilometer);
+            console.log("Datum: " + datum);
+            console.log("Zeit: " + zeit);
+        });
+    </script>
+</body>
+</html>

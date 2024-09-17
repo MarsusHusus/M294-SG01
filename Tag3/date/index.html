@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Titel der Seite</title>
+    
+</head>
+<body>
+
+    <h2 class="center">Date Picker</h2> 
+    <p id="Absatz1"> 
+        <a class="center" href="https://materializecss.com/pickers.html" 
+            target="_blank">https://materializecss.com/pickers.html</a> 
+    </p> 
+    <hr> 
+ 
+    <h3 class="center">Datum</h3> 
+    <p class="center">Per JS wird nach 2 Sekunden das aktuelle Datum gesetzt.</p> 
+    <div class="topmargin row"> 
+        <div class="input-field col s4 offset-s4"> 
+            <input id="mydate" type="text" class="datepicker" /> 
+        </div> 
+    </div> 
+ 
+    <p id="Absatz1"> 
+        <button class="btn" id="WerteLesen">Werte auslesen</button> 
+    </p>
+    
+    <script>
+        // JQuery - Document ready
+        $(function () {
+            // Initialization der select
+            // Datum Initialization
+            $('#mydate').datepicker();
+
+            setTimeout(setDate, 2000); // zwei sekunden warten, dann funktion aufrufen
+
+            // Click - Event
+            $('#WerteLesen').click(function () {
+                // Funktion aufrufen
+                getValue();
+            });
+        });
+        function setDate() {
+            // Datum Initialization
+            var date = new Date();
+            // Variante 1
+            var str = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+            // Variante 1
+            var str = date.toISOString();
+
+            $('#mydate').val(str);
+            // Datum Initialization - Deutsch usw.
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                setDefaultDate: true,
+                firstDay: 1,
+                selectMonths: true,
+                selectYears: 2,
+                i18n: {
+                    labelMonthNext: 'Nexter Monat',
+                    labelMonthPrev: 'Vorheriger Monat',
+                    labelMonthSelect: 'Monat wählen',
+                    labelYearSelect: 'Jahr wählen',
+                    months: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+                    monthsShort: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+                    monthsLong: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+                    weekdays: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+                    weekdaysShort: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+                    weekdaysAbbrev: ['S', 'M', 'D', 'M', 'D', 'F', 'S'],
+                    today: 'Heute',
+                    close: 'schliessen',
+                    cancel: 'abbrechen',
+                    clear: 'löschen',
+                    done: 'wählen'
+                }
+            });
+        }
+        function getValue() {
+            // Wert lesen
+            console.log($('#mydate').val());
+            $('body').append('<hr><p id="Absatz1">Datum: ' + $('#mydate').val() +'</p>');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+.topmargin {
+    margin-top: 30px;
+}
+
+#Absatz1 {
+    text-align: center;
+}
+
+.datepicker-date-display {
+    background-color: rgb(142, 142, 199);
+}
+
+.datepicker-table td.is-selected {
+    background-color: rgb(142, 142, 199);
+    color: black;
+}
+.datepicker-table td.is-today {
+    color: rgb(142, 142, 199);
+}
+.datepicker-day-button:focus{
+    background-color: rgb(142, 142, 199);
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    color: black;
+}
+
+.month-prev:focus, .month-next:focus {
+    background-color: rgb(142, 142, 199) !important;
+}
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: #8e8ec7;
+}

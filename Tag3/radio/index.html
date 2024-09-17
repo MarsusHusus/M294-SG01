@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Titel der Seite</title>
+    
+</head>
+<body>
+    <h2 class="center">RADIO - Buttons</h2> 
+    <p id="Absatz1"> 
+        <a class="center" href="https://materializecss.com/radio-buttons.html" 
+            target="_blank">https://materializecss.com/radio-buttons.html</a> 
+    </p> 
+    <hr> 
+ 
+    <h3 class="center">Button mit HTML checked</h3> 
+    <p class="center">Per JS wird nach 2 Sekunden ein anderer gesetzt.</p> 
+    <div class="topmargin row"> 
+        <div class="input-field col s4 offset-s4"> 
+            <label> 
+                <input name="group1" value="r" type="radio" checked /> 
+                <span>Red</span> 
+            </label> 
+        </div> 
+        <div class="input-field col s4 offset-s4"> 
+            <label> 
+                <input name="group1" value="y" type="radio" /> 
+                <span>Yellow</span> 
+            </label> 
+        </div> 
+        <div class="input-field col s4 offset-s4"> 
+            <label> 
+                <input name="group1" value="g" type="radio" class="with-gap" /> 
+                <span>Green</span> 
+            </label> 
+        </div> 
+        <div class="input-field col s4 offset-s4"> 
+            <label> 
+                <input name="group1" value="b" type="radio" disabled="disabled" /> 
+                <span>Brown</span> 
+            </label> 
+        </div> 
+    </div> 
+ 
+    <p id="Absatz1"> 
+        <button class="btn" id="WerteLesen">Werte auslesen</button> 
+    </p>
+    
+    <script>
+                // JQuery - Document ready
+                $(function () {
+
+        setTimeout(setRadio, 2000); // zwei sekunden warten, dann funktion aufrufen
+
+        // Click - Event
+        $('#WerteLesen').click(function () {
+            // Funktion aufrufen
+            getValue();
+        });
+        });
+        function setRadio() {
+        // Wert setzten
+        $("input:radio").each(function () {
+            if ($(this).val() == "y") {
+                $(this).attr('checked', 'checked');
+            }
+        });
+
+        }
+        function getValue() {
+        // Wert lesen
+        $("input:radio").each(function () {
+            if ($(this).prop('checked')) {
+                console.log("Vaule = " + $(this).val());
+                $('body').append('Value = ' + $(this).val() + ' / ');
+            }
+        });
+        }
+    </script>
+
+</body>
+</html>

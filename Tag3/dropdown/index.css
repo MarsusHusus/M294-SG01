@@ -1,26 +1,21 @@
-    
-        .topmargin {
-            margin-top: 30px;
-        }
+.topmargin {
+    margin-top: 30px;
+}
 
-        /* Label - Text Farbe bei focus */
-        .input-field input:focus+label {
-            color: rgb(226, 51, 185) !important;
-        }
+/* Input Feld - underline color bei focus */
+.input-field input[type=text]:focus {
+    border-bottom: 2px solid red !important;
+    -webkit-box-shadow: 0 2px 0 0 red !important;
+    -moz-box-shadow: 0 2px 0 0 red !important;
+    box-shadow: 0 2px 0 0 red !important;
+}
 
-        /* Input Feld - underline color bei focus */
-        .input-field input[type=text]:focus {
-            border-bottom: 2px solid rgb(226, 51, 185) !important;
-            -webkit-box-shadow: 0 2px 0 0 rergb(226, 51, 185)d !important;
-            -moz-box-shadow: 0 2px 0 0 rgb(226, 51, 185) !important;
-            box-shadow: 0 2px 0 0 rgb(226, 51, 185) !important;
-        }
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: black;
+}
 
-        /* ICON - Farbe bei active*/
-        .input-field .prefix.active {
-            color: rgb(226, 51, 185) !important;
-        }
 
-        #Absatz1 {
-            text-align: center;
-        }
+#Absatz1 {
+    text-align: center;
+}

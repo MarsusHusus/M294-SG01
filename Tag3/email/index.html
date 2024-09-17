@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Titel der Seite</title>
+</head>
+<body>
+
+    <h2 class="center">Text Inputs</h2> 
+    <p id="Absatz1"> 
+        <a class="center" href="https://materializecss.com/text-inputs.html" 
+            target="_blank">https://materializecss.com/text-inputs.html</a> 
+    </p> 
+    <hr> 
+    <h4 class="center">E-Mail Eingabe</h4>
+    <div class="topmargin row">
+        <div class="input-field col s4 offset-s4">
+            <i class="material-icons prefix">email</i>
+            <input placeholder="Bitte E-Mail eingeben" id="email" type="email" class="validate">
+            <label for="email">Email</label>
+        </div>
+    </div>
+    <p id="Absatz1"> 
+        <button class="btn" id="WerteLesen">Werte auslesen</button> 
+    </p>
+    
+    <script>
+        // JQuery - Document ready
+        $(function () {
+            console.log('Document ready');
+            setTimeout(InputSet, 2000); // zwei Sekunden warten, dann Funktion aufrufen
+
+            // Click - Event
+            $('#WerteLesen').click(function () {
+                // Funktion aufrufen
+                getValue();
+            });
+        });
+
+        function InputSet() {
+            // Beispielwert setzen
+            $('#email').val('example@example.com');
+            console.info('Wert wurde in das E-Mail-Feld geschrieben');
+            // Klasse valid zu Input-Feld hinzufügen
+            $("#email").addClass("valid");
+            // Prefilling Text Inputs (damit Labels nicht im Input-Feld sind, wenn kein Placeholder vorhanden ist)
+            M.updateTextFields();
+        }
+
+        function getValue() {
+            // Wert lesen
+            var email = $('#email').val();
+            
+            // E-Mail Validierung
+            if (validateEmail(email)) {
+                console.warn('Wert im Feld Email: ' + email);
+                // Ausgabe auf der Seite erstellen
+                $('body').append('<hr><p id="Absatz1">E-Mail: ' + email + '</p>');
+            } else {
+                console.warn('Die eingegebene E-Mail-Adresse ist ungültig.');
+                $('body').append('<hr><p id="Absatz1" style="color: red;">Die eingegebene E-Mail-Adresse ist ungültig.</p>');
+            }
+        }
+
+        // Funktion zur E-Mail Validierung
+        function validateEmail(email) {
+            // Einfache E-Mail Validierung mit regulärem Ausdruck
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+
+</body>
+</html>
